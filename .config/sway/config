@@ -44,7 +44,7 @@ font pango:DejaVu Sans Mono 12
 output DP-1 mode 2560x1440@143.973Hz
 output DP-2 mode 3440x1440@99.998Hz
 output DP-1 pos 3440 0
-output DP-1 adaptive_sync off
+output DP-1 adaptive_sync on
 # 10-bit color breaks non-atomic (legacy) backend (WLR_DRM_NO_ATOMIC=1):
 output DP-1 render_bit_depth 10
 output DP-2 pos 0 0
