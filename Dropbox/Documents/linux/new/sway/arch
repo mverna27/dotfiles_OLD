@@ -1,0 +1,217 @@
+-> /etc/pacman.conf
+remove and add to ignore list:
+sudo pacman -Rns amdvlk lib32-amdvlk xf86-video-ati xf86-video-dummy xf86-video-fbdev xf86-video-nouveau xf86-video-openchrome xf86-video-qxl xf86-video-vesa xf86-video-vmware xf86-video-voodoo
+
+
+
+-> install dropbox and enable service
+
+
+
+-> set vim as default editor
+/etc/environment
+EDITOR=vim
+
+
+
+-> set up amdgpu
+
+
+
+-> install packages from pkglist
+sudo pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort Dropbox/Documents/linux/documentation/pkglist-pacman))
+yay -S --needed - < pkglist-aur
+
+
+
+-> bash/zsh: tweaks
+no sudo password prompt: add to visudo or better into the sudoers.d directory: 
+marco ALL=(ALL) NOPASSWD:ALL
+and then make it read-only (chmod 440)
+
+
+
+-> zsh: tweaks
+~/.zshrc
+sudo pacman -S zsh-syntax-highlighting --needed
+then put in zshrc (last line): source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+sudo pacman -S zsh-theme-powerlevel10k --needed
+the put this at end of .zshrc: source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+then source
+https://github.com/romkatv/powerlevel10k#arch-linux
+
+
+
+-> GRUB: skip timeout
+https://wiki.archlinux.org/title/GRUB/Tips_and_tricks#Hide_GRUB_unless_the_Shift_key_is_held_down
+
+
+
+-> replace pulseaudio with pipewire + tweaks
+sudo pacman -S pipewire pipewire-alsa pipewire-pulse lib32-pipewire easyeffects --needed
+download EQ presets from https://forum.manjaro.org/t/howto-enhance-your-linux-audio-with-easyeffects-or-pulseeffects-legacy/82497
+enable noise reduction and echo canceller in easyeffects
+pactl info
+install wireplumber
+tweak pipewire: https://forum.manjaro.org/t/howto-troubleshoot-crackling-in-pipewire/82442
+in /usr/share/wireplumber/main.lua.d/50-alsa-config.lua uncomment and change to '0'
+["session.suspend-timeout-seconds"] = 0,  -- 0 disables suspend
+
+
+-> spotify disable song notifications
+add to .config/spotify/Users/USER_ID/prefs
+ui.track_notifications_enabled=false
+
+////////////create and enable systemd service//////////////////
+go to /home/%user%/.config/systemd/user/
+make our easyeffects.service file that's contain:
+
+[Unit]
+Description=easyeffects autostart config
+
+[Service]
+Restart=always
+RestartSec=3
+ExecStart=/usr/bin/easyeffects --gapplication-service
+Nice=-10
+
+[Install]
+WantedBy=default.target
+
+systemctl --user daemon-reload
+systemctl --user start easyeffects.service
+systemctl --user status easyeffects.service
+
+
+
+-> kitty: dropdown
+yay -S tdrop-git
+tdrop -m -a -t -w "100%" -h "100%" kitty --class "tdrop"
+add custom shortcut
+
+
+
+-> fstab: mount game drive
+https://www.youtube.com/watch?v=vAgWug72-mQ
+mkdir /mnt/games
+sudo chown marco:marco /mnt/games/
+add to fstab with following options:
+nosuid,nodev,nofail,x-gvfs-show,x-gvfs-name=games,rw,users,exec,auto
+
+
+
+-> ranger: copy configs
+ranger --copy-config=all
+
+
+
+-> ranger: show image previews
+cp /usr/share/doc/ranger/config/rc.conf ./confing/ranger/
+set preview_images true
+set preview_images_method ueberzug
+
+
+
+-> ranger: show video previews
+sudo pacman -S ffmpegthumbnailer --needed
+cp /usr/share/doc/ranger/config/scope.sh .config/ranger
+in ~/.config/ranger/scope.sh
+uncomment this part:
+# Video
+ video/*)
+     # Thumbnail
+     ffmpegthumbnailer -i "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}" -s 0 && exit 6
+     exit 1;;
+
+
+
+-> ranger bind to Meta+[SOME KEY]
+/usr/share/applications/ranger.desktop
+Terminal=false
+Exec= kitty -e ranger
+then set this desktop application for shortcut
+
+
+
+-> configure mpv
+https://wiki.archlinux.org/title/Mpv
+
+
+
+-> enable cronie
+systemctl enable cronie.service
+systemctl start cronie.service
+
+
+
+-> manage dotfiles: bare git repository
+atlassian.com/git/tutorials/dotfiles
+https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-bash-zsh-or-powershell-the-bare-repo-approach-35l3
+
+
+
+-> git token / SSH authentication 
+https://wiki.archlinux.org/title/SSH_keys#ssh-agent
+
+
+
+-> KVM / QEMU / LIBVIRT
+https://wiki.archlinux.org/title/QEMU
+https://wiki.archlinux.org/title/Libvirt
+
+
+
+-> FIREFOX on Wayland:
+https://wiki.archlinux.org/title/firefox#Wayland
+THIS METHOD WORKS ONLY IN KDE AND GNOME I THINK:
+~/.config/environment.d/envvars.conf
+MOZ_ENABLE_WAYLAND=1
+TO DEFINE GLOBALLY JUST USE /etc/environment
+
+
+
+-> FIREFOX fix some symbols showing as boxes
+gfx.font_rendering.fontconfig.max_generic_substitutions=127
+
+
+
+-> sway: fix waybar volume not updating after switching tty session:
+disable "process all outputs" in easyeffects
+
+
+
+-> sway fixes for gaming
+https://www.reddit.com/r/linux_gaming/comments/qc6c0l/gaming_on_sway/
+
+
+
+-> enable numlock on X initialization
+add to i3 config file:
+exec numlockx &
+
+
+
+-> if using wine wayland for osu stable:
+run with unset DISPLAY (or DISPLAY=)
+
+
+
+#####################################
+########## USEFUL COMMANDS ##########
+#####################################
+
+WINE_FULLSCREEN_FSR=1 %command%
+
+sed -i 's/\r//g' FileWithCarriageReturns.sh
+
+killall -9 winedevice.exe
+
+to enable shader chache on amdvlk: echo 'ShaderCacheMode,2' >> ~/.config/amdVulkanSettings.cfg 
+
+
+
+OTHER STUFF
+
+gputest
+mustang alpha
+STAR-2DKL-LJXP star citizen referral code
