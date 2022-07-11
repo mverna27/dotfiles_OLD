@@ -21,7 +21,7 @@ UUID=6a4bb0ba-1449-428f-9a78-fc16b0128b63	/var/cache/pacman/pkg	btrfs     	rw,no
 UUID=6a4bb0ba-1449-428f-9a78-fc16b0128b63	/var/log  		btrfs     	rw,noatime,ssd,space_cache=v2,subvol=/@log 0 0
 
 # /dev/sda1
-UUID=a6739b94-d7e8-4858-9226-f481a53b1409 	/mnt/games 		ext4 		rw,noatime,ssd,nosuid,nodev,nofail,users,exec,x-gvfs-show,x-gvfs-name=Games 0 0
+UUID=a6739b94-d7e8-4858-9226-f481a53b1409 	/mnt/games 		ext4 		rw,noatime,nosuid,nodev,nofail,users,exec,x-gvfs-show,x-gvfs-name=Games 0 0
 
 # /dev/sda2
 UUID=59449326-30a9-4096-bcd9-6f00743e04aa 	/mnt/ssd 		btrfs 		rw,noatime,ssd,space_cache=v2,compress=zstd:1,nosuid,nodev,nofail,noexec,x-gvfs-show,x-gvfs-name=SSD 0 0
