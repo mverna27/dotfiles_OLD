@@ -13,7 +13,7 @@ then
 	
 	# Check for existing config file
 	current_config=$(echo $(cat /usr/share/wireplumber/main.lua.d/50-alsa-config.lua 2>/dev/null | fgrep "${setting}"))
-	if [[ $? -ne 0 ]] ; then echo "/usr/share/wireplumber/main.lua.d/50-alsa-configa.lua not found. Can't apply patch." && exit ; fi
+	if [[ $? -ne 0 ]] ; then echo "/usr/share/wireplumber/main.lua.d/50-alsa-config.lua not found. Can't apply patch." && exit ; fi
 
 	# Check if patch is already applied
 	if [[ "${current_config}" == "${disabled}" ]] ; then echo "Patch already applied, nothing to do." && exit ; fi

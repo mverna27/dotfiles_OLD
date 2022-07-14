@@ -2,7 +2,8 @@
 	"layer": "top",
 	"modules-left": ["custom/launcher","sway/workspaces","custom/media","custom/check_pi","custom/check_vsyscall32"],
 	"modules-center": ["river/tags","sway/window"],
-	"modules-right": ["tray","gamemode","custom/check_otd","custom/check_vrr","custom/max_render_time","cpu","memory","pulseaudio","clock"],
+	//"modules-right": ["tray","gamemode","custom/check_otd","custom/check_vrr","custom/max_render_time","cpu","memory","pulseaudio","clock"],
+	"modules-right": ["tray","gamemode","custom/check_otd","custom/max_render_time","cpu","memory","pulseaudio","clock"],
 
      "mpd": {
          "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
