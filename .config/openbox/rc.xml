@@ -39,7 +39,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Onyx</name>
+    <name>Arc-Clone</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -288,6 +288,41 @@
     <keybind key="W-f">
       <action name="ToggleFullscreen"/>
     </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <command>pactl set-sink-volume 0 +3%</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>pactl set-sink-volume 0 -3%</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <command>pactl set-sink-mute 0 toggle</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPlay">
+      <action name="Execute">
+        <command>playerctl play-pause</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioStop">
+      <action name="Execute">
+        <command>playerctl stop</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute">
+        <command>playerctl next</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute">
+        <command>playerctl previous</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
@@ -309,7 +344,7 @@
       <mousebind action="Click" button="A-Left">
         <action name="Unshade"/>
       </mousebind>
-      <mousebind action="Drag" button="A-Left">
+      <mousebind action="Drag" button="W-Left">
         <action name="Move"/>
       </mousebind>
       <mousebind action="Press" button="A-Right">
@@ -317,7 +352,7 @@
         <action name="Raise"/>
         <action name="Unshade"/>
       </mousebind>
-      <mousebind action="Drag" button="A-Right">
+      <mousebind action="Drag" button="W-Right">
         <action name="Resize"/>
       </mousebind>
       <mousebind action="Press" button="A-Middle">

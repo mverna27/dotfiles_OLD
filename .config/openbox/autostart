@@ -16,9 +16,10 @@
 #
 #xfce-mcs-manager &
 
-$HOME/arch/scripts/display/100-144.sh
-sleep 0.1
+$HOME/arch/scripts/display/100-144.sh &
+sleep 0.1 &
 xfsettings &
 nitrogen --restore &
-tint2&
+tint2 &
 redshift &
+xset r rate 200 70 &
