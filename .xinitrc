@@ -55,5 +55,5 @@ fi
 #exec xterm -geometry 80x66+0+0 -name login
 
 # start X11 session
-export MOZ_ENABLE_WAYLAND=
+#export MOZ_ENABLE_WAYLAND=
 exec openbox-session
