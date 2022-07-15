@@ -16,7 +16,7 @@
 #
 #xfce-mcs-manager &
 
-$HOME/arch/scripts/display/100-144.sh &
+$HOME/arch/scripts/display/100-144-tearfree.sh &
 sleep 0.1 &
 xfsettings &
 nitrogen --restore &
