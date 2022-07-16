@@ -22,4 +22,6 @@ xfsettings &
 nitrogen --restore &
 tint2 &
 redshift &
+numlockx &
+setxkbmap -option caps:escape &
 xset r rate 200 70 &
