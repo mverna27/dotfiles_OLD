@@ -1,0 +1,17 @@
+# CSGO
+$HOME/arch/scripts/games/csgo/pre.sh ; gamemoderun %command% -nojoy -vulkan -fullscreen ; $HOME/arch/scripts/games/csgo/post.sh
+
+# SOTTR
+(not yet assigned)
+
+# DOOM
+$HOME/arch/scripts/games/doom/pre.sh ; gamemoderun mangohud DXVK_ASYNC=1 %command% ; $HOME/arch/scripts/games/doom/post.sh
+
+# NIER AUTOMATA
+(not yet assigned)
+
+# APEX LEGENDS
+$HOME/arch/scripts/games/apex/pre.sh ; gamemoderun %command% ; $HOME/arch/scripts/games/apex/post.sh
+
+# CYBERPUNK
+$HOME/arch/scripts/games/cyberpunk/pre.sh ; gamemoderun mangohud DXVK_ASYNC=1 %command% ; $HOME/arch/scripts/games/cyberpunk/post.sh
