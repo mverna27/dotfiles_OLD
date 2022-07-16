@@ -24,8 +24,8 @@
               "Value": null
             },
             {
-              "Property": "PredictionEnabled",
-              "Value": null
+              "Property": "AntichatterOffsetY",
+              "Value": 1.0
             },
             {
               "Property": "PredictionStrength",
@@ -44,19 +44,19 @@
               "Value": 0.3
             },
             {
+              "Property": "PredictionEnabled",
+              "Value": false
+            },
+            {
               "Property": "Latency",
               "Value": 1.0
             },
             {
               "Property": "Frequency",
-              "Value": 1000.0
-            },
-            {
-              "Property": "AntichatterOffsetY",
-              "Value": 0.0
+              "Value": 3600.0
             }
           ],
-          "Enable": false
+          "Enable": true
         }
       ],
       "AbsoluteModeSettings": {
@@ -70,8 +70,8 @@
         "Tablet": {
           "Width": 80.0,
           "Height": 60.0,
-          "X": 89.39537,
-          "Y": 43.985004,
+          "X": 76.00001,
+          "Y": 47.500004,
           "Rotation": 180.0
         },
         "EnableClipping": true,
