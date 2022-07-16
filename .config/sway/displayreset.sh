@@ -6,4 +6,8 @@ swaymsg $(cat $HOME/.config/sway/config | grep "output DP-1 max_render_time")
 sleep 0.1
 swaymsg $(cat $HOME/.config/sway/config | grep "output DP-2 max_render_time")
 sleep 0.1
+swaymsg $(cat $HOME/.config/sway/config | grep "output DP-1 mode 2560x1440@")
+sleep 0.1
+swaymsg $(cat $HOME/.config/sway/config | grep "output DP-2 mode 3440x1440@")
+sleep 0.1
 cat $HOME/.config/sway/config | grep "output DP-1 adaptive_sync on" || $HOME/.config/sway/vrr_off.sh
