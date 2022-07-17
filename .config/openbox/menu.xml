@@ -3,9 +3,9 @@
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 
 <menu id="apps-term-menu" label="Terminals">
-  <item label="Alacritty">
+  <item label="Kitty">
     <action name="Execute">
-      <command>alacritty</command>
+      <command>kitty</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -39,7 +39,7 @@
 <menu id="apps-fileman-menu" label="File Managers">
   <item label="Ranger">
     <action name="Execute">
-      <command>alacritty -e ranger</command>
+      <command>kitty -e ranger</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>

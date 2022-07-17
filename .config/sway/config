@@ -236,7 +236,8 @@ input "1133:49285:Logitech_G_Pro_Gaming_Mouse" {
     for_window [class="league of legends.exe"] move to workspace 2
     for_window [class="riotclientux.exe"] move to workspace number 2
     for_window [class="leagueclientux.exe"] move to workspace number 2
-    for_window [title="osu!"] move to workspace number 2 
+    for_window [title="osu!"] move to workspace number 2
+    for_window [title="Shadow of the Tomb Raider"] move to workspace number 1
 
     # floating windows
     for_window [class="XEyes"] floating enable

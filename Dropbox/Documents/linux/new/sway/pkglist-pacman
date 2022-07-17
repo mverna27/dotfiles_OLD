@@ -74,6 +74,7 @@ vdpauinfo
 vkd3d
 vulkan-headers
 vulkan-radeon
+vulkan-validation-layers
 waybar
 wget
 winetricks
