@@ -60,6 +60,7 @@ pipewire-pulse
 playerctl
 polkit-gnome
 python
+radeontop
 ranger
 redshift
 rtkit
