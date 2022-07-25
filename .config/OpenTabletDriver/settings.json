@@ -53,7 +53,7 @@
             },
             {
               "Property": "Frequency",
-              "Value": 3600.0
+              "Value": 1000.0
             }
           ],
           "Enable": true
