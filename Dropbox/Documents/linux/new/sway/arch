@@ -1,3 +1,4 @@
+aaaaaaa
 -> /etc/pacman.conf
 remove and add to ignore list:
 sudo pacman -Rns amdvlk lib32-amdvlk xf86-video-ati xf86-video-dummy xf86-video-fbdev xf86-video-nouveau xf86-video-openchrome xf86-video-qxl xf86-video-vesa xf86-video-vmware xf86-video-voodoo
