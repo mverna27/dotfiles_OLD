@@ -1,6 +1,6 @@
 {
 	"layer": "top",
-	"modules-left": ["custom/launcher","sway/workspaces","custom/media","custom/check_pi","custom/check_vsyscall32"],
+	"modules-left": ["custom/launcher","sway/workspaces","custom/media","custom/check_pi"],
 	"modules-center": ["river/tags","sway/window"],
 	//"modules-right": ["tray","gamemode","custom/check_otd","custom/check_vrr","custom/max_render_time","cpu","memory","pulseaudio","clock"],
 	"modules-right": ["tray","gamemode","custom/check_otd","custom/max_render_time","cpu","memory","pulseaudio","clock"],
@@ -155,19 +155,6 @@
         // "exec": "$HOME/.config/waybar/check_pi_reachable.sh 2> /dev/null", // Script in resources folder
         "exec": "echo 'RASPBERRY PI HAS BECOME UNREACHABLE AND REQUIRES MANUAL RESTART'",
         "exec-if": "$(! ping -c 1 -W 0.1 192.168.0.3 | grep '1 received')",
-    },
-         "custom/check_vsyscall32": {
-         "interval": 1800,
-         "format": "{icon} {} {icon}",
-         "max-length": 80,
-         "format-icons": {
-             "default": "❌"
-         },
-         "escape": true,
-         // "exec": "$HOME/.config/waybar/check_pi_reachable.sh 2> /dev/null", // Script in resources folder
-         "exec": "echo 'LoL not running but vsyscall32 is still disabled. Click here to fix.'",
-         "exec-if": "$(! cat /proc/sys/abi/vsyscall32 | grep 1) && $(echo $(ps aux | pgrep RiotClient))",
-         "on-click": "pkexec sh -c 'sysctl -w abi.vsyscall32=1'"
     },
           "custom/max_render_time": {
           "interval": 60,

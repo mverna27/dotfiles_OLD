@@ -13,5 +13,5 @@ else
 	$HOME/arch/scripts/display/100-144.sh
 fi
 
-# check if vsyscall32 is enabled and if yes, disable it
-test $(cat /proc/sys/abi/vsyscall32 | grep 1) && sudo sysctl -w abi.vsyscall32=0
+# check if vsyscall32 is enabled and if yes, disable it (NO LONGER NEEDED SINCE LUTRIS-GE-LOL-7.0-3)
+#test $(cat /proc/sys/abi/vsyscall32 | grep 1) && sudo sysctl -w abi.vsyscall32=0

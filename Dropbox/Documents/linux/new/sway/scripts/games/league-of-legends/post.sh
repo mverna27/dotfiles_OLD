@@ -9,5 +9,5 @@ else
 	$HOME/arch/scripts/display/100-144-tearfree.sh
 fi
 
-#check if vsyscall32 is disabled and if yes, enable it
-test $(cat /proc/sys/abi/vsyscall32 | grep 0) && sudo sysctl -w abi.vsyscall32=1
+# check if vsyscall32 is disabled and if yes, enable it (NO LONGER NEEDED SINCE LUTRIS-GE-LOL-7.0-3)
+#test $(cat /proc/sys/abi/vsyscall32 | grep 0) && sudo sysctl -w abi.vsyscall32=1
