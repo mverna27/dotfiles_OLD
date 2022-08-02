@@ -3,7 +3,9 @@ base
 bat
 bc
 blender
+checkbashisms
 clang
+dash
 ffmpegthumbnailer
 firefox
 gamemode

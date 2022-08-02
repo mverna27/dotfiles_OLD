@@ -207,6 +207,7 @@ ttyctl -f
 config() {
 	cp /etc/xdg/nvim/sysinit.vim $HOME/systemwide_configs/etc/xdg/nvim/sysinit.vim
 	cp /etc/fstab $HOME/systemwide_configs/etc/fstab
+	cp /usr/share/libalpm/hooks/bash-update.hook $HOME/systemwide_configs/usr/share/libalpm/hooks/bash-update.hook
 	cp /etc/environment $HOME/systemwide_configs/etc/environment
 	cp /etc/X11/xorg.conf.d/20-amdgpu.conf $HOME/systemwide_configs/etc/X11/xorg.conf.d/20-amdgpu.conf
 	cp /etc/systemd/system/getty@tty1.service.d/autologin.conf $HOME/systemwide_configs/etc/systemd/system/getty@tty1.service.d/autologin.conf

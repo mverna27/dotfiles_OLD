@@ -7,7 +7,7 @@ test -z $SWAYSOCK && exit 1
 status="$(swaymsg -t get_outputs | grep "\"adaptive_sync_status\": \"enabled\",")"
 
 # enable adaptive sync for DP-1
-while [[ -z "$status" ]]
+while [ -z "$status" ]
 do 
 	swaymsg output DP-1 adaptive_sync on && sleep 0.01
 	status="$(swaymsg -t get_outputs | grep "\"adaptive_sync_status\": \"enabled\",")"
