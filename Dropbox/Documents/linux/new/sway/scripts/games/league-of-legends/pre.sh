@@ -13,5 +13,8 @@ else
 	$HOME/arch/scripts/display/100-144.sh
 fi
 
+# set mouse DPI
+ratbagctl "Logitech G Pro Gaming Mouse" dpi set 8000
+
 # check if vsyscall32 is enabled and if yes, disable it (NO LONGER NEEDED SINCE LUTRIS-GE-LOL-7.0-3)
 #test $(cat /proc/sys/abi/vsyscall32 | grep 1) && sudo sysctl -w abi.vsyscall32=0
