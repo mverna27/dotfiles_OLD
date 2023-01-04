@@ -1,6 +1,0 @@
-						"LaunchOptions"		"$HOME/arch/scripts/games/csgo/pre.sh ; gamemoderun %command% -nojoy -vulkan -fullscreen -novid ; $HOME/arch/scripts/games/csgo/post.sh"
-						"LaunchOptions"		"$HOME/arch/scripts/games/doom/pre.sh ; gamemoderun mangohud DXVK_ASYNC=1 %command% ; $HOME/arch/scripts/games/doom/post.sh"
-						"LaunchOptions"		"$HOME/arch/scripts/games/nier/pre.sh ; gamemoderun DXVK_ASYNC=1 %command% ; $HOME/arch/scripts/games/nier/post.sh"
-						"LaunchOptions"		"$HOME/arch/scripts/games/sottr/pre.sh ; gamemoderun mangohud DXVK_ASYNC=1 %command% ; $HOME/arch/scripts/games/sottr/post.sh"
-						"LaunchOptions"		"$HOME/arch/scripts/games/cyberpunk/pre.sh ; gamemoderun mangohud DXVK_ASYNC=1 %command% ; $HOME/arch/scripts/games/cyberpunk/post.sh"
-						"LaunchOptions"		"$HOME/arch/scripts/games/apex/pre.sh ; gamemoderun %command% ; $HOME/arch/scripts/games/apex/post.sh"
